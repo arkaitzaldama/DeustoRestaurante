@@ -1,4 +1,4 @@
-# deustoReventa
+# deustoRestaurante
 
 ## Base de datos
 _Crear una base de datos llamada productsDB en MySQL y dar permisos al usuario por defecto_
