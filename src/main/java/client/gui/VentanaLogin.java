@@ -4,6 +4,8 @@ import javax.swing.BoxLayout;
 
 
 
+
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,7 +21,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import client.controller.ComprasController;
+import client.controller.VentasController;
 import client.controller.LoginController;
 import serialitation.Venta;
 import serialitation.Producto;
@@ -46,7 +48,7 @@ public class VentanaLogin extends JFrame{
 	 * @param cliente el cliente de la aplicacion
 	 * @param webTarget para poder hacer las llamadas al servidor
 	 */
-	public VentanaLogin(Client cliente, WebTarget webTarget){
+	public VentanaLogin(Client cliente, final WebTarget webTarget){
 		super();
 		this.cliente=cliente;
 		this.webTarget=webTarget;
@@ -130,7 +132,7 @@ public class VentanaLogin extends JFrame{
 					String password=contraseina.getText();
 					boolean valido=lc.logIn(email, password, lError,v1);
 					if (valido) {
-						VentanaCompras v= new VentanaCompras(new ComprasController(webTarget, email),VentanaLogin.this.cliente, VentanaLogin.this.webTarget, email);
+						VentanaVentas v= new VentanaVentas(new VentasController(webTarget, email),VentanaLogin.this.cliente, VentanaLogin.this.webTarget, email);
 						//VentanaChat v1 = new VentanaChat(VentanaLogin.this.cliente,VentanaLogin.this.webTarget,email);
 						VentanaLogin.this.dispose();
 					}

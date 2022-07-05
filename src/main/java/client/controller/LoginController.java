@@ -32,11 +32,11 @@ public class LoginController {
 	 * @param lError label en el que se mostrara el mensaje de error
 	 * @param vl ventana de login
 	 * @return true si el login es correcto, false en caso contrario
-	 * @throws ReventaException excepcion lanzada cuando no se puede conectar con el servidor
+	 * @throws RestauranteException excepcion lanzada cuando no se puede conectar con el servidor
 	 */
 	public boolean logIn(String email, String password, JLabel lError, VentanaLogin vl) throws RestauranteException {
 		try {
-			WebTarget webTarget=this.webTarget.path("/reventa/logIn");
+			WebTarget webTarget=this.webTarget.path("/restaurante/logIn");
 			Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
 			Usuario u=new Usuario();
 			u.setEmail(email);
@@ -67,7 +67,7 @@ public class LoginController {
 	/**Devuelve un usuario dado su email
 	 * @param email del usuario a devolver
 	 * @return Usuario con el email introducido
-	 * @throws ReventaException excepcion lanzada cuando no se puede conectar con el servidor
+	 * @throws RestauranteException excepcion lanzada cuando no se puede conectar con el servidor
 	 */
 	public Usuario getUsuario(String email)throws RestauranteException {
 		WebTarget webTarget = this.webTarget.path("collector/getUsuario/"+ email);

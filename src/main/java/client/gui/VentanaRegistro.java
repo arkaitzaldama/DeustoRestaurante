@@ -1,6 +1,7 @@
 package client.gui;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
@@ -13,10 +14,10 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import client.controller.RegistroController;
-import serialization.Venta;
-import serialization.Tarjeta;
-import serialization.Usuario;
-import util.ReventaException;
+import serialitation.Venta;
+import serialitation.Tarjeta;
+import serialitation.Usuario;
+import util.RestauranteException;
 import java.awt.*;
 
 public class VentanaRegistro extends JFrame{

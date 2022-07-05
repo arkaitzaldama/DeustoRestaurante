@@ -24,10 +24,10 @@ private WebTarget webTarget;
 	/**
 	 * registrar a un usuario
 	 * @param u
-	 * @throws ReventaException
+	 * @throws RestauranteException
 	 */
 	public void registrar(Usuario u) throws RestauranteException {
-		WebTarget webTarget = this.webTarget.path("reventa/registro");
+		WebTarget webTarget = this.webTarget.path("restaurante/registro");
 		Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
 		Response response = invocationBuilder.post(Entity.entity(u, MediaType.APPLICATION_JSON));
 		if (response.getStatus() != Status.OK.getStatusCode()) {
